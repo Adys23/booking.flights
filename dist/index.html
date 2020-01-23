@@ -5,10 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>booking.flights</title>
-<link href="main.3107c35579c6957ca874.css" rel="stylesheet"></head>
+<link href="main.efd0efc792b3a625c2be.css" rel="stylesheet"></head>
 <body>
-    <div class="div1">
-        Dupa blada
+    <nav class="nav">
+        <span class="nav__logo"></span>
+        <span class="nav__name">booking.flights</span>
+        <div class="hamburger" id="hamburger-1">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+        </div>
+        <ul>
+            <li>List 1</li>
+            <li>List 2</li>
+        </ul>
+        <a class="skip" href="#menu">Menu</a>
+        <ul id="menu">
+            <li><a href="#">Menu item 1</a></li>
+            <li><a href="#">Menu item 2</a></li>
+            <li><a href="#">Menu item 3</a></li>
+            <li><a href="#">Menu item 4</a></li>
+            <li><a href="#">Menu item 5</a></li>
+    </ul>
+    </nav>
+    <div class="main">
+        <p class="main__description">Find your flight</p>
+            <form class="main__search_menu" action="" method="POST">
+                <p>departure:</p>
+                <input class="main__search_menu__departure" type="text">
+                <p>destination:</p>
+                <input class="main__search_menu__destination" type="text">
+                <p>flight date:</p>
+                <input class="main__search_menu__flight_date" type="text">
+                <p>passengers:</p>
+                <p>adults</p>
+                <button>+</button>
+                <span>1</span>
+                <button>-</button>
+                <p>children</p>
+                <button>+</button>
+                <span>1</span>
+                <button>-</button>
+                <button>SEARCH</button>
+            </form>
     </div>
 <script type="text/javascript" src="bundle.js"></script></body>
 </html>

@@ -94,7 +94,7 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _index_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.scss */ \"./src/index.scss\");\n/* harmony import */ var _index_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_index_scss__WEBPACK_IMPORTED_MODULE_0__);\n\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _index_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.scss */ \"./src/index.scss\");\n/* harmony import */ var _index_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_index_scss__WEBPACK_IMPORTED_MODULE_0__);\n\n$(document).ready(function () {\n  $(\".hamburger\").click(function () {\n    $(this).toggleClass(\"is-active\");\n  });\n});\nvar nav = document.querySelector(\"nav ul\"),\n    navToggle = document.querySelector(\"nav .skip\");\n\nif (navToggle) {\n  navToggle.addEventListener(\"click\", function (e) {\n    if (nav.className == \"open\") {\n      nav.className = \"\";\n    } else {\n      nav.className = \"open\";\n    }\n\n    e.preventDefault();\n  }, false);\n}\n/* Any click outside of the nav element will close the menu if it's open */\n\n\nvar specifiedElement = document.querySelector('nav');\ndocument.addEventListener('click', function (event) {\n  var isClickInside = specifiedElement.contains(event.target);\n\n  if (!isClickInside && nav.className == \"open\") {\n    nav.className = \"\";\n  }\n});\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ }),
 

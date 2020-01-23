@@ -7,8 +7,39 @@
     <title>booking.flights</title>
 </head>
 <body>
-    <div class="div1">
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio ab eligendi eveniet, numquam recusandae facere quae, maiores dolor provident a veniam delectus maxime aperiam vel eum culpa tempora. Atque, eius.
+    <nav class="nav">
+        <span class="nav__logo"></span>
+        <span class="nav__name">booking.flights</span>
+        <div class="hamburger" id="hamburger-1">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+        </div>
+        <ul>
+            <li>List 1</li>
+            <li>List 2</li>
+        </ul>
+    </nav>
+    <div class="main">
+        <p class="main__description">Find your flight</p>
+            <form class="main__search_menu" action="" method="POST">
+                <p>departure:</p>
+                <input class="main__search_menu__departure" type="text">
+                <p>destination:</p>
+                <input class="main__search_menu__destination" type="text">
+                <p>flight date:</p>
+                <input class="main__search_menu__flight_date" type="text">
+                <p>passengers:</p>
+                <p>adults</p>
+                <button>+</button>
+                <span>1</span>
+                <button>-</button>
+                <p>children</p>
+                <button>+</button>
+                <span>1</span>
+                <button>-</button>
+                <button>SEARCH</button>
+            </form>
     </div>
 </body>
 </html>
