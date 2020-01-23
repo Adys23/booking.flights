@@ -1,5 +1,7 @@
 const path = require('path');
+const isDevelopment = process.env.NODE_ENV === 'development';
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
     entry: "./src/index.js",
@@ -15,16 +17,44 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             template: "./src/index.html"
+        }),
+        new MiniCssExtractPlugin({
+            filename: isDevelopment ? '[name].css' : '[name].[hash].css',
+            chunkFilename: isDevelopment ? '[id].css' : '[id].[hash].css'
         })
     ],
     module: {
-        rules: [
+        rules: [{
+                test: /\.module\.s(a|c)ss$/,
+                loader: [
+                    isDevelopment ? 'style-loader' : MiniCssExtractPlugin.loader,
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            modules: true,
+                            sourceMap: isDevelopment
+                        }
+                    },
+                    {
+                        loader: 'sass-loader',
+                        options: {
+                            sourceMap: isDevelopment
+                        }
+                    }
+                ]
+            },
             {
-                test: /\.scss$/,
-                use: [
-                    "style-loader",
-                    "css-loader",
-                    "sass-loader" 
+                test: /\.s(a|c)ss$/,
+                exclude: /\.module.(s(a|c)ss)$/,
+                loader: [
+                    isDevelopment ? 'style-loader' : MiniCssExtractPlugin.loader,
+                    'css-loader',
+                    {
+                        loader: 'sass-loader',
+                        options: {
+                            sourceMap: isDevelopment
+                        }
+                    }
                 ]
             },
             {
@@ -46,5 +76,8 @@ module.exports = {
                 use: ["html-loader"]
             }
         ]
+    },
+    resolve: {
+        extensions: ['.js', '.jsx', '.scss']
     }
 }
